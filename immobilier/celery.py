@@ -16,7 +16,7 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'increase-user-balance': {
         'task': 'investisseurs.tasks.augmenter_solde',
-        'schedule': crontab(hour=0, minute=20),  # Planifier tous les jours à 0h10
+        'schedule': crontab(hour=0, minute=00),  # Planifier tous les jours à 0h10
         # 'schedule': crontab(minute='*/5'),  # Planifier toutes les 5 minutes
     },
 }
