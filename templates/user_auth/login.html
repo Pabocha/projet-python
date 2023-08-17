@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>Connexion</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="/media/img/favicon.png" rel="icon" />
+  <link href="/media/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="/media/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/media/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="/media/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+  <link href="/media/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="/media/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="/media/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'sass/main.css'%}" rel="stylesheet" />
+
+  <!-- =======================================================
+  * Template Name: UpConstruction
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>CoopérativeCP<span>.</span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      {% include 'base/navbar.html'%}
+      <!-- .navbar -->
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/media/img/breadcrumbs-bg.jpg')">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+        <h2>Connexion</h2>
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li>Connexion</li>
+        </ol>
+      </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 d-flex flex-column justify-center align-items-center">
+          <div class="col-lg-6">
+            <!-- message d'erreur  -->
+            <div class="wrapper mt-4">
+              {% for message in messages %}
+              <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                </button>
+                {% if message.tags == 'alert-success' %}
+                <i class="bi bi-check-circle-fill"></i> {{message|safe}}
+                {% else %}
+                <i class="bi bi-x-circle-fill"></i> {{message|safe}}
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+            <!-- fin message d'erreur  -->
+            <div class="info-item d-flex flex-column justify-content-center align-items-center">
+              <i class="bi bi-person-circle"></i>
+              <h3>Connexion</h3>
+              <p>Acceder à votre compte</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="info-item p-5">
+              <form method="POST" action="{% url 'login' %}?next={{ request.GET.next }}">
+                {% csrf_token %}
+                <div class="form-group">
+                  <div class="row mb-3">
+                    <input type="hidden" name="next" value="{{ request.GET.next }}">
+                  </div>
+                  <div class="row mb-3">
+                    <label for="username">Matricule :</label>
+                    <input type="text" name="username" id="username" placeholder="Votre matricule"
+                      class="form-control mb-2" />
+                  </div>
+                  <div class="row mb-3">
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" name="password" id="password" placeholder="Votre mot de passe"
+                      class="form-control mb-2" required />
+                  </div>
+                </div>
+
+                <div class="row mb-2">
+                  <input type="submit" value="Se connecter" class="btn btn-warning text-white" />
+                </div>
+                <center>
+
+                  <p>Pas de compte ? <a href="{% url 'register' %}">incrivez-vous</a></p>
+                </center>
+                <center class="mt-2">
+                  <p>
+                    Mot de passe oubliez ? <a href="{% url 'reset_password'%}">clique ici</a>
+                  </p>
+                </center>
+              </form>
+            </div>
+          </div>
+          <!-- End Contact Form -->
+        </div>
+      </div>
+    </section>
+    <!-- End Contact Section -->
+  </main>
+  <!-- End #main -->
+
+  {% include 'base/footer.html'%}
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/media/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/media/vendor/aos/aos.js"></script>
+  <script src="/media/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/media/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/media/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/media/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js'%}"></script>
+</body>
+
+</html>
