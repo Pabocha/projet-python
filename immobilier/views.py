@@ -24,6 +24,11 @@ def about(request):
 def profil(request):
     return render(request, 'user_auth/profil.html')
 
+def ristourne(request):
+    return render(request, 'investissement/ristourne.html')
+
+def vente(request):
+    return render(request, 'investissement/vente.html')
 
 @login_required(login_url='login')
 @user_passes_test(lambda u: u.is_superuser)

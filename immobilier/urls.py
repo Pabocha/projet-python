@@ -29,6 +29,8 @@ urlpatterns = [
     path('contact/', include('contacts.urls')),
     path('utilisateur/', include('utilisateurs.urls')),
     path('service/investissement/', include('investisseurs.urls')),
+    path('service/ristourne', views.ristourne, name='ristourne'),
+    path('service/vente', views.vente, name='vente'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('dashboard/all-notifications/',
          views.viewAllNotifications, name='notification'),
