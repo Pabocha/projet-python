@@ -8,7 +8,7 @@ from django.contrib.auth.admin import UserAdmin
 
 class MemberAdmin(admin.ModelAdmin):
     list_display = ['matricule', 'prenom',
-                    'nom', 'contribution', 'date_inscris']
+                    'nom', 'contribution', 'date_inscris', 'actif']
     search_fields = ('matricule', 'prenom', 'nom', 'email',)
     list_filter = ('matricule', 'date_inscris')
 

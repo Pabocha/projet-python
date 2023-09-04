@@ -27,14 +27,22 @@ def change_membre(sender, instance, **kwargs):
         Notification.objects.create(matricule=instance.username, nom=instance.last_name, prenom=instance.first_name, email=instance.email,
                                     message="Un nouvel utilisateur s'est inscris sur la plateforme", type_message="inscription")
 
-    # Permet de savoir si l'utilisateur à payé l'inscription pour devenir membre si c'est valide automatiquement il devient membre
-    if instance.inscription == None:
-        pass
-    elif instance.inscription >= 10000:
-        instance.membre = True
+    # Permet d'ajouter les informations de l'utilisateur dans la table des membres s'il devient membre 
+ 
+    if instance.membre:
         if not Membres.objects.filter(matricule=instance.username).exists():
-            obj = Membres.objects.create(
-                matricule=instance.username, prenom=instance.first_name, nom=instance.last_name, email=instance.email, phone=instance.phone, adresse=instance.adresse)
-            obj.save()
+            Membres.objects.create(
+                matricule=instance.username, prenom=instance.first_name, nom=instance.last_name, email=instance.email, phone=instance.phone, adresse=instance.adresse, actif=True)
+            
         else:
-            pass
+            member = Membres.objects.get(matricule=instance.username)
+            if not member.actif:
+                member.actif = True
+                member.save()
+    else:
+        if Membres.objects.filter(matricule=instance.username).exists():
+            member = Membres.objects.get(matricule=instance.username)
+            member.actif = False
+            member.save()
+        
+

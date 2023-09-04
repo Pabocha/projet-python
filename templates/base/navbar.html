@@ -19,8 +19,8 @@
     <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
     {% endif %}
 
-    <li><a href="{% url 'register'%}">S'inscrire</a></li>
     {% if not request.user.is_authenticated%}
+    <li><a href="{% url 'register'%}">S'inscrire</a></li>
     <li><a href="{% url 'login'%}">Connexion</a></li>
     {% else %}
     <li><a href="{% url 'logout'%}">Deconnexion</a></li>

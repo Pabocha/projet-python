@@ -16,6 +16,7 @@ class Membres(models.Model):
         max_digits=12, decimal_places=0, default=0)
     revenue_de_membre = models.DecimalField(
         max_digits=12, decimal_places=0, default=0)
+    actif = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = "Membre"

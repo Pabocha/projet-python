@@ -29,8 +29,6 @@ class Utilisateur(AbstractUser):
     image_de_profile = models.ImageField(upload_to=rename_image, blank=True)
     adresse = models.CharField(max_length=30, null=True)
     membre = models.BooleanField(default=False)
-    inscription = models.DecimalField(
-        max_digits=12, decimal_places=0, blank=True, null=True)
     investisseur = models.BooleanField(default=False)
 
 

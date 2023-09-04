@@ -19,10 +19,10 @@ class AdminUser(UserAdmin):
          'last_name', 'email', 'phone', 'adresse', 'image_de_profile')}),
         ('Permissions', {
             'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
-        ('Inscription', {'fields': ('inscription', 'membre')}),
+        ('Membre de la coopérative', {'fields': ('membre',)}),
         ('Investissement', {
          'fields': ('investisseur',)}),
-        ('Important dates', {'fields': ('last_login', 'date_joined')}),
+        ('dates enregistrement et connexion', {'fields': ('last_login', 'date_joined')}),
     )
 
     add_fieldsets = (

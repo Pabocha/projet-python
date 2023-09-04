@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'contacts',
     'django_celery_results',
     'django_celery_beat',
+    'axes',
 ]
 
 MIDDLEWARE = [
@@ -79,12 +80,20 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'axes.middleware.AxesMiddleware',
     # 'django.contrib.admin.middleware.AdminSiteMiddleware',
+]
+AUTHENTICATION_BACKENDS = [
+    # AxesStandaloneBackend should be the first backend in the AUTHENTICATION_BACKENDS list.
+    'axes.backends.AxesStandaloneBackend',
+
+    # Django ModelBackend is the default authentication backend.
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 SESSION_COOKIE_AGE = 3600  # Durée de vie en secondes (1 heure)
-
-
+# AXES_COOLOFF_TIME = 120
+AXES_ENABLED = False
 
 
 ROOT_URLCONF = 'immobilier.urls'
