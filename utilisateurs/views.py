@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect
 from immobilier import settings
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.utils.encoding import force_bytes, force_text
@@ -11,8 +11,6 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.http import JsonResponse
-from django.forms.models import model_to_dict
 
 # pour verifier les droits des utilisateurs
 from django.contrib.admin.views.decorators import user_passes_test
@@ -41,7 +39,7 @@ def register(request):
         # récupération des données du formulaire
         form = UserCreationForms(data=request.POST)
         # verification du formulaire
-        if form.is_valid():
+        if form.is_valid(raise_exceptions=True):
             user = form.save(commit=False)
             user.is_active = False
             user.save()
@@ -210,26 +208,6 @@ def user_profile(request):
                 return redirect('compte')
     context = {'form': form}
     return render(request, 'user_auth/users-profile.html', context)
-
-# @login_required
-# def getcompte(request):
-#     investisseur = Investisseur.objects.get(matricule=request.user.username)
-#     if request.method == "POST":
-#         montant_retrait = Decimal(request.POST['montant'])
-#         if request.user.solde >= montant_retrait:
-#             if investisseur.retrait_en_attente == 0:
-#                 investisseur.solde -= montant_retrait
-#                 investisseur.retrait_en_attente = montant_retrait
-#                 investisseur.total_de_retrait += investisseur.retrait_en_attente
-#                 investisseur.save()
-#                 messages.success(
-#                     request, "votre retrait à été effectué avec success")
-#             else:
-#                 messages.error(request, "vous avez déjà un retrait en attente")
-#         else:
-#             messages.error(request, "votre solde eest insuffisant")
-#     investisseur_data = model_to_dict(investisseur)
-#     return JsonResponse({'investisseur': investisseur_data})
 
 
 @login_required
