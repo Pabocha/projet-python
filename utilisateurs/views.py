@@ -39,7 +39,7 @@ def register(request):
         # récupération des données du formulaire
         form = UserCreationForms(data=request.POST)
         # verification du formulaire
-        if form.is_valid(raise_exceptions=True):
+        if form.is_valid():
             user = form.save(commit=False)
             user.is_active = False
             user.save()
