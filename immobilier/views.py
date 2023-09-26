@@ -37,10 +37,15 @@ def dashboard(request):
     notification = Notification.objects.filter(read=False)
     count_notifications = notification.count()
 
-    # pour les investisseur
-    nbre_total_investisseur = Investisseur.objects.count()
-    somme_montant_investi = Investisseur.objects.aggregate(
+    # le nbre des investisseurs actifs 
+    nbre_total_investisseur = Investisseur.objects.filter(is_active=True).count()
+    nbre_investisseur_no_actif =Investisseur.objects.filter(is_active=False).count()
+
+    # Ne prend en compte que les comptes d'investisseur actif puis calcul la somme de leur montant d'investissement 
+    somme_montant_investi = Investisseur.objects.filter(is_active=True).aggregate(
         total_montant=Sum('montant_investi'))['total_montant']
+    
+    # Filtre les investisseurs qui ont un retrait (champ retrait_en_attente > 0 )
     user_retrait_en_attente = Investisseur.objects.filter(
         retrait_en_attente__gt=0)
 
@@ -50,7 +55,6 @@ def dashboard(request):
 
     # Pour le membres
     nbre_total_membres = Membres.objects.count()
-    contribution_total_membres = Membres.objects.aggregate(total_contribution=Sum('contribution'))['total_contribution']
 
     if request.method == 'POST':
 
@@ -126,8 +130,7 @@ def dashboard(request):
         'contacts': contact_no_read,
         'count_contact': count_contact,
         'nbre_total_membres': nbre_total_membres,
-        'contribution_total_membres': contribution_total_membres,
-
+        'nbre_investisseur_no_actif': nbre_investisseur_no_actif,
     }
     return render(request, 'base/dashboard.html', context)
 

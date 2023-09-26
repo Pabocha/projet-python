@@ -35,7 +35,6 @@ def investissement(request):
             email = request.user.email
             phone = request.user.phone
             solde = 0
-            # en prend en compte la date qu'il investi on augmente de +1 (le mois ou il son solde va augmenter)
 
             # on initialise on ne le crée pas encore, on verifie d'abord les contraintes
             investisseur = Investisseur(matricule=matricule, prenom=firstname,
