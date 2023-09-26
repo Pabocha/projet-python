@@ -22,9 +22,6 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
   <link href="/media/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/media/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="/media/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +33,7 @@
   <link href="{% static 'sass/main.css' %}" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: UpConstruction
+  * Template Name: Construisons ensemble
   * Updated: Mar 10 2023 with Bootstrap v5.2.3
   * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
   * Author: BootstrapMade.com
@@ -50,9 +47,9 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <img src="{% static 'images/Logo officiel.png' %}" width="150"  alt="logo">
-        
-      
+      <img src="{% static 'images/Logo_officiel.png' %}" width="150" alt="logo">
+
+
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -63,186 +60,277 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
-
-    <div class="info d-flex align-items-center">
+    <!-- <div class="info d-flex align-items-center">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6 text-center">
             <h2 data-aos="fade-down">Construisons <span>Ensemble</span></h2>
-            <p data-aos="fade-up">Dans l'optique de l'optique d'aider la population à avoir un chez soi la Coopérative
+            <p data-aos="fade-up">Dans l'optique de l'optique d'aider la population à avoir un chez soi la
+              Coopérative
               Contruisons Ensemble
               vous offres la possibilté d'acquérir un chez vous plus facilement.
             </p>
+
             <a data-aos="fade-up" data-aos-delay="200" href="{% url 'contact' %}"
               class="btn-get-started">Contactez-nous</a>
+
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <div class="carousel-item active" style="background-image: url(/media/img/hero-carousel/hero-carousel-1.jpg)">
+        <div class="info d-flex align-items-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 text-center">
+                <h2 data-aos="fade-down">Construisons <span>Ensemble</span></h2>
+                <p data-aos="fade-up">Dans l'optique de l'optique d'aider la population à avoir un chez soi la
+                  Coopérative
+                  Contruisons Ensemble
+                  vous offres la possibilté d'acquérir un chez vous plus facilement.
+                </p>
+
+                <a data-aos="fade-up" data-aos-delay="200" href="{% url 'contact' %}"
+                  class="btn-get-started">Contactez-nous</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url(/static/images/slide1.jpg)">
+        <div class="info d-flex align-items-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 text-center">
+                <h2 data-aos="fade-down">Construisons <span>Ensemble2</span></h2>
+                <p data-aos="fade-up">Dans l'optique de l'optique d'aider la population à avoir un chez soi la
+                  Coopérative
+                  Contruisons Ensemble
+                  vous offres la possibilté d'acquérir un chez vous plus facilement.
+                </p>
+
+                <a data-aos="fade-up" data-aos-delay="200" href="{% url 'contact' %}"
+                  class="btn-get-started">Contactez-nous</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item " style="background-image: url(/static/images/slide2.jpg)">
+        <div class="info d-flex align-items-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 text-center">
+                <h2 data-aos="fade-down">Construisons <span>Ensemble3</span></h2>
+                <p data-aos="fade-up">Dans l'optique de l'optique d'aider la population à avoir un chez soi la
+                  Coopérative
+                  Contruisons Ensemble
+                  vous offres la possibilté d'acquérir un chez vous plus facilement.
+                </p>
+
+                <a data-aos="fade-up" data-aos-delay="200" href="{% url 'contact' %}"
+                  class="btn-get-started">Contactez-nous</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item " style="background-image: url(/static/images/slide3.jpg)">
+        <div class="info d-flex align-items-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 text-center">
+                <h2 data-aos="fade-down">Construisons <span>Ensemble5</span></h2>
+                <p data-aos="fade-up">Dans l'optique de l'optique d'aider la population à avoir un chez soi la
+                  Coopérative
+                  Contruisons Ensemble
+                  vous offres la possibilté d'acquérir un chez vous plus facilement.
+                </p>
+
+                <a data-aos="fade-up" data-aos-delay="200" href="{% url 'contact' %}"
+                  class="btn-get-started">Contactez-nous</a>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
-      <div class="carousel-item active" style="background-image: url(/media/img/hero-carousel/hero-carousel-1.jpg)">
-      </div>
-      <div class="carousel-item active" style="background-image: url(/static/images/slide1.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(/static/images/slide2.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(/static/images/slide3.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(/static/images/slide1.jpg)"></div>
-      <div class="carousel-item" style="background-image: url(/static/images/slide2.jpg)"></div>
-      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-      </a>
+    <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
 
-      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-      </a>
+    <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
 
     </div>
 
   </section><!-- End Hero Section -->
 
+
+
   <main id="main">
-
-
     <!-- ======= Constructions Section ======= -->
     <section id="constructions" class="constructions">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
           <h3>Pr&eacutesentation</h3>
-          <p>La coopérative "CONSTRUISONS POUR TOI" vise à offrir à ses membres des conditions de 
-          logement optimales à moindre coût. Elle permet aux personnes ayant des projets de rénovation,
-           de construction, d'achat immobilier ou de recherche de soutien financier de les réaliser sans 
-           recourir à un crédit immobilier ou à des bailleurs externes, quel que soit leur budget ou leur 
-           profil. 
-          Cela apporte une alternative accessible aux investissements immobiliers coûteux traditionnels.
+          <p>La coopérative "CONSTRUISONS POUR TOI" vise à offrir à ses membres des conditions de
+            logement optimales à moindre coût. Elle permet aux personnes ayant des projets de rénovation,
+            de construction, d'achat immobilier ou de recherche de soutien financier de les réaliser sans
+            recourir à un crédit immobilier ou à des bailleurs externes, quel que soit leur budget ou leur
+            profil.
+            Cela apporte une alternative accessible aux investissements immobiliers coûteux traditionnels.
           </p>
-          
-        </div>
-
-          <!-- ======= Features Section ======= -->
-    <section id="features" class="features section-bg">
-      <div class="section-header">
-        <h2>Les avantages de la coopérative</h2>
-        <p>Vous avez un projet réjoignez nous,
-          devenez propriétaire avec zéro franc.
-         Le sable est mouvant mais la roche est solide et stable’’nous sommes une roche ‘’.
-          Construisez votre patrimoine en intégrant la grande famille des coopérateurs.
-          </p>
-      </div>
-      <div class="container" data-aos="fade-up">
-
-        <ul class="nav nav-tabs row  g-2 d-flex">
-
-          <li class="nav-item col-3">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-              <h4>Avantage 1</h4>
-            </a>
-          </li><!-- End tab nav item -->
-
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-              <h4>Avantage 2</h4>
-            </a><!-- End tab nav item -->
-
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-              <h4>Avantage 3</h4>
-            </a>
-          </li><!-- End tab nav item -->
-
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-              <h4>Avantage 4</h4>
-            </a>
-          </li><!-- End tab nav item -->
-
-        </ul>
-
-        <div class="tab-content">
-
-          <div class="tab-pane active show" id="tab-1">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center"
-                data-aos="fade-up" data-aos-delay="100">
-                <h3>Avantages liés à la Coopération et la Solidarité</h3>
-                <p class="fst-italic">
-                  En favorisant la coopération et la solidarité, la coopérative offre les avantages suivants:
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> La plus grande force de l'entraide qu'elle fédère et le sentiment de fraternité qu'elle crée.</li>
-                  <li><i class="bi bi-check2-all"></i> Modèle économique puissant et stabilisateur grâce à la collaboration de plusieurs acteurs.</li>
-                  <li><i class="bi bi-check2-all"></i> La force d’entreprendre à plusieurs permet d’atteindre une taille critique suffisante et de partager des investissements.</li>
-                  <li><i class="bi bi-check2-all"></i> Le modèle coopératif augmente les compétences disponibles au profit du projet.</li>
-                  <li><i class="bi bi-check2-all"></i> Entreprendre à plusieurs permettra également plus de flexibilité et la possibilité de mouvement.</li>
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                
-                <img src="{% static 'images/avantage 1.jpg' %}" width="500"  alt="avantage 1">
-              </div>
-            </div>
-          </div><!-- End tab content item -->
-
-          <div class="tab-pane" id="tab-2">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                <h3>Avantages liés à l'Égalité et au Soutien Social</h3>
-                <p class="fst-italic">
-                  La coopérative assure l'égalité et offre un soutien social à ses membres, notamment avec les avantages suivants :
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> Tous les sociétaires reçoivent le même service et la même attention, peu importe le montant de leur dépôt.</li>
-                  <li><i class="bi bi-check2-all"></i> Assistance sociale, permet aux membres de bénéficier d’un appui médical, d'accès à la formation, au logement, au décès d’un membre et de son proche parent du en fonction des situations</li>
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="{% static 'images/slide1.jpg' %}" width="500"  alt="avantage 1">
-              </div>
-            </div>
-          </div><!-- End tab content item -->
-
-          <div class="tab-pane" id="tab-3">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                <h3>Avantages liés à l'Accès aux Matériaux de Construction</h3>
-                <p class="fst-italic">
-                  Pour faciliter la construction, la coopérative propose des avantages liés à l'accès aux matériaux de construction :
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> Accès aux matériaux de construction grâce aux partenariats tissés avec les partenaires industriels, les membres auront la possibilité 
-                    d’acquérir les consommables de la construction à des prix hors concurrence</li>
-                </ul>
-
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="{% static 'images/avantage 2.jpg' %}" width="500"  alt="avantage 1">
-              </div>
-            </div>
-          </div><!-- End tab content item -->
-
-          <div class="tab-pane" id="tab-4">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                <h3>Avantages liés à la Réalisation Efficace de Projets de Construction </h3>
-                <p class="fst-italic">
-                  En vue de la réalisation efficace de projets de construction, la coopérative offre les avantages suivants :
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> Rapidité dans la réalisation de son projet de construction.</li>
-                  <li><i class="bi bi-check2-all"></i> Coût de construction très réduits.</li>
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="{% static 'images/avantage 4.jpg' %}" width="500"  alt="avantage 1">
-              </div>
-            </div>
-          </div><!-- End tab content item -->
 
         </div>
 
-      </div>
-    </section><!-- End Features Section -->
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features section-bg">
+          <div class="section-header">
+            <h2>Les avantages de la coopérative</h2>
+            <p>Vous avez un projet réjoignez nous,
+              devenez propriétaire avec zéro franc.
+              Le sable est mouvant mais la roche est solide et stable’’nous sommes une roche ‘’.
+              Construisez votre patrimoine en intégrant la grande famille des coopérateurs.
+            </p>
+          </div>
+          <div class="container" data-aos="fade-up">
+
+            <ul class="nav nav-tabs row  g-2 d-flex">
+
+              <li class="nav-item col-3">
+                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+                  <h4>Avantage 1</h4>
+                </a>
+              </li><!-- End tab nav item -->
+
+              <li class="nav-item col-3">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+                  <h4>Avantage 2</h4>
+                </a><!-- End tab nav item -->
+
+              <li class="nav-item col-3">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+                  <h4>Avantage 3</h4>
+                </a>
+              </li><!-- End tab nav item -->
+
+              <li class="nav-item col-3">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+                  <h4>Avantage 4</h4>
+                </a>
+              </li><!-- End tab nav item -->
+
+            </ul>
+
+            <div class="tab-content">
+
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <h3>Avantages liés à la Coopération et la Solidarité</h3>
+                    <p class="fst-italic">
+                      En favorisant la coopération et la solidarité, la coopérative offre les avantages suivants:
+                    </p>
+                    <ul>
+                      <li><i class="bi bi-check2-all"></i> La plus grande force de l'entraide qu'elle fédère et le
+                        sentiment de fraternité qu'elle crée.</li>
+                      <li><i class="bi bi-check2-all"></i> Modèle économique puissant et stabilisateur grâce à la
+                        collaboration de plusieurs acteurs.</li>
+                      <li><i class="bi bi-check2-all"></i> La force d’entreprendre à plusieurs permet d’atteindre une
+                        taille critique suffisante et de partager des investissements.</li>
+                      <li><i class="bi bi-check2-all"></i> Le modèle coopératif augmente les compétences disponibles au
+                        profit du projet.</li>
+                      <li><i class="bi bi-check2-all"></i> Entreprendre à plusieurs permettra également plus de
+                        flexibilité et la possibilité de mouvement.</li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
+
+                    <img src="{% static 'images/avantage 1.jpg' %}" width="500" alt="avantage 1">
+                  </div>
+                </div>
+              </div><!-- End tab content item -->
+
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                    <h3>Avantages liés à l'Égalité et au Soutien Social</h3>
+                    <p class="fst-italic">
+                      La coopérative assure l'égalité et offre un soutien social à ses membres, notamment avec les
+                      avantages suivants :
+                    </p>
+                    <ul>
+                      <li><i class="bi bi-check2-all"></i> Tous les sociétaires reçoivent le même service et la même
+                        attention, peu importe le montant de leur dépôt.</li>
+                      <li><i class="bi bi-check2-all"></i> Assistance sociale, permet aux membres de bénéficier d’un
+                        appui médical, d'accès à la formation, au logement, au décès d’un membre et de son proche parent
+                        du en fonction des situations</li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-6 order-1 order-lg-2 text-center">
+                    <img src="{% static 'images/slide1.jpg' %}" width="500" alt="avantage 1">
+                  </div>
+                </div>
+              </div><!-- End tab content item -->
+
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                    <h3>Avantages liés à l'Accès aux Matériaux de Construction</h3>
+                    <p class="fst-italic">
+                      Pour faciliter la construction, la coopérative propose des avantages liés à l'accès aux matériaux
+                      de construction :
+                    </p>
+                    <ul>
+                      <li><i class="bi bi-check2-all"></i> Accès aux matériaux de construction grâce aux partenariats
+                        tissés avec les partenaires industriels, les membres auront la possibilité
+                        d’acquérir les consommables de la construction à des prix hors concurrence</li>
+                    </ul>
+
+                  </div>
+                  <div class="col-lg-6 order-1 order-lg-2 text-center">
+                    <img src="{% static 'images/avantage 2.jpg' %}" width="500" alt="avantage 1">
+                  </div>
+                </div>
+              </div><!-- End tab content item -->
+
+              <div class="tab-pane" id="tab-4">
+                <div class="row">
+                  <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                    <h3>Avantages liés à la Réalisation Efficace de Projets de Construction </h3>
+                    <p class="fst-italic">
+                      En vue de la réalisation efficace de projets de construction, la coopérative offre les avantages
+                      suivants :
+                    </p>
+                    <ul>
+                      <li><i class="bi bi-check2-all"></i> Rapidité dans la réalisation de son projet de construction.
+                      </li>
+                      <li><i class="bi bi-check2-all"></i> Coût de construction très réduits.</li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-6 order-1 order-lg-2 text-center">
+                    <img src="{% static 'images/avantage 4.jpg' %}" width="500" alt="avantage 1">
+                  </div>
+                </div>
+              </div><!-- End tab content item -->
+
+            </div>
+
+          </div>
+        </section><!-- End Features Section -->
 
         <!-- start services-->
 
@@ -258,32 +346,34 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(/media/img/constructions-1.jpg);"></div>
+                  <div class="card-bg">
+                    <div class="card-bg" style="background-image: url(/static/images/pieces_argent.jpg)"></div>
+                  </div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h4 class="card-title">L’entraide au sien de la coopérative</h4>
-                    <p>L'entraide crée des liens, facilite la réussite personnelle 
-                      par la coopération, et repose sur le principe de LIKILEMBA, 
-                      où chaque membre contribue selon ses moyens pour soutenir 
+                    <h4 class="card-title">L’entraide au sein de la coopérative</h4>
+                    <p>L'entraide crée des liens, facilite la réussite personnelle
+                      par la coopération, et repose sur le principe de LIKILEMBA,
+                      où chaque membre contribue selon ses moyens pour soutenir
                       les autres dans la réalisation de leurs projets et objectifs.</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div> 
+          </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(/media/img/constructions-2.jpg);"></div>
+                  <div class="card-bg" style="background-image: url(/static/images/cle_maison.jpg);"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
                     <h4 class="card-title">Investissement sur l’immobilier </h4>
-                    <p>Tous les membres pourront investir individuellement dans les 
-                      activités de la coopérative, en plus de leurs contributions 
+                    <p>Tous les membres pourront investir individuellement dans les
+                      activités de la coopérative, en plus de leurs contributions
                       statutaires, et recevront des dividendes en retour.</p>
                   </div>
                 </div>
@@ -295,14 +385,14 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(/media/img/constructions-3.jpg);"></div>
+                  <div class="card-bg" style="background-image: url(/static/images/brique.jpg)"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
                     <h4 class="card-title">Vente des consommables de construction</h4>
                     <p>En plus de LIKIELEMBA et de l'investissement dans les grands projets
-                       immobiliers, la coopérative générera des revenus grâce
-                       à la vente de matériaux de construction à des prix compétitifs pour ses membres.</p>
+                      immobiliers, la coopérative générera des revenus grâce
+                      à la vente de matériaux de construction à des prix compétitifs pour ses membres.</p>
                   </div>
                 </div>
               </div>
@@ -313,21 +403,24 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(/media/img/constructions-4.jpg);"></div>
+                  <div class="card-bg" style="background-image: url(/static/images/slide1.jpg)"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
-                    <h4 class="card-title">Expedita voluptas ut ut nesciunt</h4>
-                    <p>Aut est quidem doloremque voluptatem magnam quis excepturi vero quia. Eum eos doloremque
-                      architecto illo at beatae dolore. Fugiat suscipit et sint ratione dolores. Aut aliquid ea dolores
-                      libero nobis.</p>
+                    <h4 class="card-title">adh&eacutesion</h4>
+                    <p>
+                      Si vous avez un projet immobilier et avez du mal à obtenir un prêt bancaire,
+                      envisagez d'adhérer à notre coopérative. Vous obtiendrez un logement à
+                      moindre coût pour la construction, la rénovation, l'achat de parcelles."<br>
+                      <i> <strong>rejoignez-nous pour plus d'information</strong></i>
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
-         <!-- End services-->
+
+          <!-- End services-->
 
         </div>
 
@@ -335,7 +428,7 @@
     </section><!-- End Constructions Section -->
 
     <!-- ======= Services Section ======= -->
-   <!--
+    <!--
      <section id="services" class="services section-bg">
       <div class="container" data-aos="fade-up">
       
@@ -399,7 +492,7 @@
     End Services Section -->
 
     <!-- ======= Alt Services Section ======= -->
-   <!-- start
+    <!-- start
        <section id="alt-services" class="alt-services">
       <div class="container" data-aos="fade-up">
 
@@ -456,8 +549,8 @@
     
     End Alt Services Section -->
 
-  
-    
+
+
     <!-- ======= Our Projects Section ======= -->
     <!--  
     <section id="projects" class="projects">
@@ -746,7 +839,7 @@
     </section>
     
     End Testimonials Section -->
-  
+
     <!-- ======= Recent Blog Posts Section ======= -->
 
     <!-- 
